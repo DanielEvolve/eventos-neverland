@@ -1,0 +1,192 @@
+/* Variables de Color y Fuentes */
+:root {
+    --clr-amarillo-neverland: #FFEB3B;
+    --clr-azul-cielo-neverland: #7AD5F7;
+    --clr-magenta-neverland: #EF47A5; /* Un fucsia/magenta intenso */
+
+    /* Colores de soporte */
+    --clr-blanco: #FFFFFF;
+    --clr-gris-muy-claro: #fcfcff; /* Un fondo casi blanco pero muy suave */
+    --clr-texto-principal: #343a40; /* Un gris oscuro, legible */
+    --clr-texto-secundario: #5f676d;
+    --clr-acento-oscuro: #2c003e; /* Un morado oscuro para contraste si se necesita */
+
+    /* Fuentes */
+    --font-principal: 'Poppins', sans-serif;
+    --font-encabezados: 'Fredoka One', cursive; /* 'cursive' es un fallback genérico */
+}
+
+/* Reseteo Básico y Estilos Globales */
+body {
+    font-family: var(--font-principal);
+    color: var(--clr-texto-principal);
+    line-height: 1.6;
+    background-color: var(--clr-gris-muy-claro); /* Fondo general muy claro */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-encabezados);
+    color: var(--clr-acento-oscuro); /* Encabezados con un color oscuro para destacar */
+    margin-bottom: 0.75em;
+}
+
+h1 { font-size: 2.8rem; color: var(--clr-magenta-neverland);} /* H1 más grande y con color de marca */
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.8rem; color: var(--clr-azul-cielo-neverland);} /* H3 con otro color de marca */
+
+a {
+    color: var(--clr-magenta-neverland);
+    text-decoration: none; /* Quitar subrayado por defecto */
+}
+
+a:hover {
+    color: var(--clr-amarillo-neverland); /* Cambio de color al pasar el mouse */
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1140px; /* Ancho estándar de Bootstrap, podemos ajustarlo */
+}
+
+/* Barra de Navegación Personalizada */
+.navbar {
+    background-color: var(--clr-blanco);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-family: var(--font-encabezados);
+    font-size: 1.8rem;
+    color: var(--clr-magenta-neverland) !important; /* Forzar color de marca */
+}
+
+.navbar .nav-link {
+    font-family: var(--font-principal);
+    font-weight: 700; /* Semi-bold */
+    color: var(--clr-texto-secundario);
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active { /* Bootstrap añade la clase .active al link actual si usamos su JS de scrollspy */
+    color: var(--clr-magenta-neverland);
+}
+
+/* Estilos para la sección Hero */
+.hero-section-neverland {
+    /* Intentemos un degradado con los colores principales */
+    background: linear-gradient(135deg, 
+                                var(--clr-magenta-neverland) 10%, 
+                                var(--clr-azul-cielo-neverland) 50%, 
+                                var(--clr-amarillo-neverland) 90%);
+    color: var(--clr-blanco); /* El texto ya debería ser blanco para contraste */
+    padding: 100px 0; 
+    min-height: 80vh; /* O la altura que prefieras, 70% del alto de la ventana */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Útil si luego añadimos formas con pseudo-elementos */
+}
+
+/* Asegurémonos de que el texto del H1 y el lead tengan buen contraste */
+.hero-section-neverland h1 {
+    color: var(--clr-blanco);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+}
+
+.hero-section-neverland .lead {
+    font-size: 1.4rem; /* Un poco más grande */
+    color: var(--clr-blanco); /* Asegurar que sea blanco */
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Sombra ligera */
+    /* Podríamos usar el amarillo aquí si el fondo es predominantemente azul/magenta en el centro */
+    /* Por ejemplo: color: var(--clr-amarillo-neverland); */
+}
+
+/* Ajuste del botón para que resalte sobre el degradado */
+.btn-cta-neverland {
+    background-color: var(--clr-amarillo-neverland);
+    color: var(--clr-texto-principal); /* Texto oscuro sobre botón amarillo */
+    /* ... (otros estilos del botón que ya tenías) ... */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Sombra más definida */
+}
+
+.btn-cta-neverland:hover {
+    background-color: var(--clr-blanco); /* Cambio a fondo blanco */
+    color: var(--clr-magenta-neverland); /* Texto magenta */
+    /* ... (otros estilos hover que ya tenías) ... */
+}
+
+/* Sección "Quiénes Somos" */
+#quienes-somos .lead {
+    color: var(--clr-texto-secundario);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Sección Servicios */
+.bg-light-neverland {
+    background-color: var(--clr-blanco); /* Un fondo limpio para esta sección */
+    border-top: 5px solid var(--clr-amarillo-neverland); /* Un toque de color */
+    border-bottom: 5px solid var(--clr-azul-cielo-neverland);
+}
+
+#servicios h2 {
+    color: var(--clr-magenta-neverland);
+    
+}
+
+.service-icon i {
+    color: var(--clr-azul-cielo-neverland);
+    /* Podríamos usar colores diferentes por icono */
+}
+.service-icon .fa-birthday-cake { color: var(--clr-magenta-neverland); }
+.service-icon .fa-futbol { color: var(--clr-amarillo-neverland); }
+.service-icon .fa-swimmer { color: var(--clr-azul-cielo-neverland); }
+.service-icon .fa-gift { color: var(--clr-azul-cielo-neverland); } /* O el color que prefieras de tu paleta */
+.service-icon .fa-ice-cream { color: var(--clr-magenta-neverland); } /* O el color que prefieras */
+
+
+#servicios h3 {
+    color: var(--clr-texto-principal);
+    font-family: var(--font-principal); /* Usar la fuente principal para estos subtítulos de servicio */
+    font-weight: 700; /* Hacerlos bold */
+    font-size: 1.4rem;
+}
+
+.btn-secondary-neverland {
+    background-color: var(--clr-magenta-neverland);
+    color: var(--clr-blanco);
+    border: none;
+    padding: 10px 25px;
+    font-family: var(--font-principal);
+    font-weight: 700;
+    border-radius: 5px;
+}
+.btn-secondary-neverland:hover {
+    background-color: var(--clr-acento-oscuro);
+    color: var(--clr-blanco);
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--clr-acento-oscuro);
+    color: var(--clr-gris-muy-claro);
+}
+footer p {
+    margin-bottom: 0;
+}
+
+/* Estilos rápidos para los iconos del footer de Neverland, podrías moverlos a style.css */
+.contact-icons-neverland a {
+    color: var(--clr-gris-muy-claro);
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+.contact-icons-neverland a:hover {
+    color: var(--clr-amarillo-neverland); /* O cualquier color de acento de Neverland */
+}
